@@ -40,11 +40,11 @@ GTFO Airfield Lighting provides Mission Editor placeable static objects for buil
 
 The automated installer is a lightweight (~1 KB) script that automatically detects your DCS installation, downloads or updates the latest GTFO Airfield Lighting assets directly into your DCS Saved Games `Mods\tech` folder, verifies file integrity with Git SHA-1 hashing, and skips files you already have.
 
-1. Download **[`install.bat`](https://raw.githubusercontent.com/pschilly/gtfo-airfield-lighting/master/install.bat)** (or grab it from the repository root / Releases).
-2. Save and double-click **`install.bat`** on your PC.
+1. Download **[`GTFO-Airfield-Lighting-Installer.bat`](https://raw.githubusercontent.com/pschilly/gtfo-airfield-lighting/master/GTFO-Airfield-Lighting-Installer.bat)** (or grab it from the repository root / Releases).
+2. Save and double-click **`GTFO-Airfield-Lighting-Installer.bat`** on your PC.
 3. Follow the on-screen prompts.
 
-> **Tip:** Keep `install.bat` on your desktop or in your DCS folder and double-click it anytime you want to check for and install new GTFO Airfield Lighting updates!
+> **Tip:** Keep `GTFO-Airfield-Lighting-Installer.bat` on your desktop or in your DCS folder and double-click it anytime you want to check for and install new GTFO Airfield Lighting updates!
 
 ---
 
