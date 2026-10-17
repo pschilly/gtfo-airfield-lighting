@@ -234,8 +234,17 @@ try {
     exit 1
 }
 
-$treeFiles = @($treeData.tree | Where-Object { $_.path -like 'GTFOAirfieldLighting/*' -and $_.type -eq 'blob' })
+$treeFiles = @($treeData.tree | Where-Object { ($_.path -like 'Mods/tech/GTFOAirfieldLighting/*' -or $_.path -like 'GTFOAirfieldLighting/*') -and $_.type -eq 'blob' })
 $fileCount = $treeFiles.Count
+
+if ($fileCount -eq 0) {
+    Write-Host "  [ ERROR ] " -NoNewline -ForegroundColor Red
+    Write-Host "No mod files found in repository tree for ref '$ref'."
+    Write-Host "  Please verify the repository release or try again later."
+    Write-Host ""
+    Read-Host "  Press Enter to exit..."
+    exit 1
+}
 
 Write-Host "  [  OK   ] " -NoNewline -ForegroundColor Green
 Write-Host "Found $fileCount mod files in repository."
@@ -257,7 +266,7 @@ $manifestList = @()
 
 foreach ($item in $treeFiles) {
     $current++
-    $relPath = $item.path -replace '^GTFOAirfieldLighting/', ''
+    $relPath = $item.path -replace '^(Mods/tech/)?GTFOAirfieldLighting/', ''
     $localRel = $relPath -replace '/', '\'
     $manifestList += $localRel
     $localPath = Join-Path $dcsPath $localRel
