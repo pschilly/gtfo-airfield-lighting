@@ -2,7 +2,7 @@
 
 **Custom airfield lighting assets for DCS World**, created for the **Global Task Force Overlord (GTFO)** community.
 
-GTFO Airfield Lighting provides Mission Editor placeable static objects for building illuminated airfields, forward operating bases, helicopter facilities, and custom runway environments. The pack includes runway and taxiway fixtures, a complete approach-light array, a red/green threshold bar, and parking-area floodlight poles. Actively developed and tested in DCS World. Appearance, light visibility, and compatibility can vary with DCS versions, maps, graphics settings, and viewing angles.
+GTFO Airfield Lighting provides Mission Editor placeable static objects for building illuminated airfields, forward operating bases, helicopter facilities, and custom runway environments. The pack includes runway and taxiway fixtures, a complete approach-light array, a red/green threshold bar, and parking-area floodlight poles.
 
 ## Features
 
@@ -36,14 +36,32 @@ GTFO Airfield Lighting provides Mission Editor placeable static objects for buil
 
 ## Installation — DCS World
 
-1. Download a **compiled release** from this repository's **Releases** section (when available). The Blender source kit alone does not contain ready-to-use EDM models.
+### Option 1: Automated Installer (Recommended)
+
+The automated installer is a lightweight (~1 KB) script that automatically detects your DCS installation, downloads or updates the latest GTFO Airfield Lighting assets directly into your DCS Saved Games `Mods\tech` folder, verifies file integrity with Git SHA-1 hashing, and skips files you already have.
+
+1. Download **[`install.bat`](https://raw.githubusercontent.com/pschilly/gtfo-airfield-lighting/master/install.bat)** (or grab it from the repository root / Releases).
+2. Save and double-click **`install.bat`** on your PC.
+3. Follow the on-screen prompts.
+
+> **Tip:** Keep `install.bat` on your desktop or in your DCS folder and double-click it anytime you want to check for and install new GTFO Airfield Lighting updates!
+
+---
+
+### Option 2: Manual Installation
+
+1. Download a **compiled release** from this repository's **Releases** section (when available) or clone this repository.
 2. Extract the `GTFOAirfieldLighting` mod folder into your DCS Saved Games mods directory:
 
    ```text
    Saved Games\DCS\Mods\tech\GTFOAirfieldLighting\
    ```
 
-   If you use a separate Saved Games profile, such as `DCS.openbeta`, use that profile's folder instead.
+   If you use a separate Saved Games profile, such as `DCS.openbeta`, use that profile's folder instead:
+
+   ```text
+   Saved Games\DCS.openbeta\Mods\tech\GTFOAirfieldLighting\
+   ```
 3. Confirm the installed folder contains `entry.lua`, `lights.lua`, `Shapes/` (compiled `.edm` files), and `Textures/`.
 4. Restart DCS World.
 5. Open the **Mission Editor**, find the GTFO lighting assets among the available **Static Objects**, and place and rotate them to suit your airfield.
@@ -52,7 +70,7 @@ GTFO Airfield Lighting provides Mission Editor placeable static objects for buil
 
 ### Updating
 
-Replace the installed mod files with those from the new compiled release and restart DCS.
+Run `install.bat` again for a one-click automated update, or manually replace the installed mod files with those from the new compiled release and restart DCS.
 
 ## Troubleshooting
 
