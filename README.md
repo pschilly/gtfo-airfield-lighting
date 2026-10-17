@@ -68,9 +68,34 @@ The automated installer is a lightweight (~1 KB) script that automatically detec
 
 **Do not install** the mod inside the DCS World program installation directory. Avoid nesting the mod folder twice, for example `...\GTFOAirfieldLighting\GTFOAirfieldLighting\entry.lua`.
 
+---
+
+### Option 3: DCSServerBot ModManager (Dedicated Servers)
+
+For dedicated servers running [Special-K's DCSServerBot](https://github.com/Special-K-s-Flightsim-Bots/DCSServerBot), you can use the built-in **ModManager** service to automatically download, install, and update the mod from GitHub Releases across your server instances.
+
+1. Ensure the `modmanager` service is enabled in your DCSServerBot configuration.
+2. In `config/services/modmanager.yaml`, add `GTFO_Airfield_Lighting` under your server instance configuration:
+
+   ```yaml
+   <your-server-instance>:
+     packages:
+       - name: GTFO_Airfield_Lighting
+         version: latest
+         source: SavedGames
+         repo: https://github.com/pschilly/gtfo-airfield-lighting
+   ```
+
+3. DCSServerBot will automatically fetch the latest release asset from GitHub, unpack it into `Saved Games\<instance>\Mods\tech\GTFOAirfieldLighting\`, and manage updates automatically.
+4. Server admins can also manage the installation via Discord slash commands:
+   - `/mods install` and select `GTFO_Airfield_Lighting`; select the `.zip` not the `.bat`.
+   - `/mods manage` to check status, update, or uninstall
+
 ### Updating
 
-Run `install.bat` again for a one-click automated update, or manually replace the installed mod files with those from the new compiled release and restart DCS.
+- **Automated Installer:** Run `GTFO-Airfield-Lighting-Installer.bat` again for a one-click automated update.
+- **DCSServerBot:** When `version: latest` is specified, DCSServerBot automatically checks for and deploys new releases during server maintenance or restart. You can also trigger updates manually using `/mods install` or `/mods manage`.
+- **Manual:** Download the latest release from the **Releases** section, overwrite the files in your `Saved Games\<profile>\Mods\tech\GTFOAirfieldLighting\` folder, and restart DCS.
 
 ## Troubleshooting
 
